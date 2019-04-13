@@ -1,0 +1,10 @@
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.exe.config
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.exe
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.pdb
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csprojAssemblyReference.cache
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.Form1.resources
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.Properties.Resources.resources
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csproj.GenerateResource.cache
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csproj.CoreCompileInputs.cache
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.exe
+C:\Users\fedek\source\repos\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.pdb
