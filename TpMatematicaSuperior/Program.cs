@@ -32,6 +32,9 @@ namespace TpMatematicaSuperior
             Console.WriteLine("Div: " + div.GetNumber());
             Console.WriteLine(Math.PI);
 
+            Complex n3 = new Complex(1, -1);
+            Console.WriteLine("Angulo Alpha del n3: " + n3.GetMyAlphaAngle());
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
