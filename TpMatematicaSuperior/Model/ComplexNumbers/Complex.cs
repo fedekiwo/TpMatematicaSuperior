@@ -8,8 +8,10 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 {
     public class Complex
     {
-        public Double Imaginary { get; set; }
-        public Double Real { get; set; }
+        private Double Imaginary;
+        private Double Real;
+        public Double ImaginaryPart { get { return Imaginary; } }
+        public Double RealPart { get { return Real; } }
 
         public Complex(Double Real, Double Imaginary) {
             this.Real = Real;
