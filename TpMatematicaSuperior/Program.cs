@@ -24,6 +24,8 @@ namespace TpMatematicaSuperior
             Console.WriteLine("Suma: " + sum.GetNumber());
             Console.WriteLine("Resta: " + subs.GetNumber());
             Console.WriteLine("Mult: " + mult.GetNumber());
+            Console.WriteLine("Modulo del primer numero: " + n1.GetMymodule());
+            Console.WriteLine("Modulo del segundo numero: " + n2.GetMymodule());
             Console.WriteLine(Math.PI);
 
             Application.EnableVisualStyles();

@@ -28,6 +28,18 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return new Complex(-this.Real, -this.Imaginary);
         }
+        
+        public Double GetMymodule()
+        {
+            double sumOfTheSquares = this.GetMySumOfSquaresOf(this.Real, this.Imaginary);
+            return Math.Sqrt(sumOfTheSquares);
+        }
+
+        public Double GetMySumOfSquaresOf(Decimal firstComplex, Decimal secondComplex)
+        {
+            int potencia = 2;
+            return Math.Pow(Convert.ToDouble(firstComplex), potencia) + Math.Pow(Convert.ToDouble(secondComplex), potencia);
+        }
 
         public static Complex operator +(Complex firstComplex, Complex secondComplex) {
             return new Complex(firstComplex.Real + secondComplex.Real, 
@@ -41,6 +53,5 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return new Complex(firstComplex.Real * secondComplex.Real,
                                firstComplex.Imaginary * secondComplex.Imaginary);
         }
-
     }
 }
