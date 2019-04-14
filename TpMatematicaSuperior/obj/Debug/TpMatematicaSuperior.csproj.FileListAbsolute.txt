@@ -18,3 +18,13 @@ C:\Users\azul\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSu
 C:\Users\azul\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csproj.CoreCompileInputs.cache
 C:\Users\azul\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.exe
 C:\Users\azul\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.pdb
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.exe.config
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.exe
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\bin\Debug\TpMatematicaSuperior.pdb
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csprojAssemblyReference.cache
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.Form1.resources
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.Properties.Resources.resources
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csproj.GenerateResource.cache
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.csproj.CoreCompileInputs.cache
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.exe
+C:\Users\mgabr\Desktop\tpSuperior\TpMatematicaSuperior\TpMatematicaSuperior\obj\Debug\TpMatematicaSuperior.pdb

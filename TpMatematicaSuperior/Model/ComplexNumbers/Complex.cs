@@ -59,5 +59,15 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return new Complex(firstComplex.Real * secondComplex.Real,
                                firstComplex.Imaginary * secondComplex.Imaginary);
         }
+
+        public static Complex operator /(Complex firstComplex, Complex secondComplex)
+        {
+            decimal aux1, aux2, aux3;
+            aux1 = (firstComplex.Real * secondComplex.Real) + (firstComplex.Imaginary * secondComplex.Imaginary);
+            aux2 = (secondComplex.Real * firstComplex.Imaginary) - (firstComplex.Real * secondComplex.Imaginary);
+            aux3 = Convert.ToDecimal( Math.Pow(Convert.ToDouble(secondComplex.Real), 2) + Math.Pow(Convert.ToDouble(secondComplex.Imaginary), 2));
+            return new Complex( aux1 / aux3 , aux2 / aux3);
+        }
+
     }
 }
