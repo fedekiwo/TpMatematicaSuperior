@@ -26,6 +26,8 @@ namespace TpMatematicaSuperior
             Console.WriteLine("Mult: " + mult.GetNumber());
             Console.WriteLine("Modulo del primer numero: " + n1.GetMymodule());
             Console.WriteLine("Modulo del segundo numero: " + n2.GetMymodule());
+            Console.WriteLine("Angulo Alpha del primer numero: " + n1.GetMyAlphaAngle());
+            Console.WriteLine("Angulo Alpha del segundo numero: " + n2.GetMyAlphaAngle());
             Console.WriteLine(Math.PI);
 
             Application.EnableVisualStyles();

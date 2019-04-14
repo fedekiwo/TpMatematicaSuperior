@@ -41,6 +41,12 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return Math.Pow(Convert.ToDouble(firstComplex), potencia) + Math.Pow(Convert.ToDouble(secondComplex), potencia);
         }
 
+        public Double GetMyAlphaAngle()
+        {
+            double argumento = (Convert.ToDouble(this.Imaginary) /Convert.ToDouble(this.Real));
+            return Math.Atan(argumento);
+        }
+
         public static Complex operator +(Complex firstComplex, Complex secondComplex) {
             return new Complex(firstComplex.Real + secondComplex.Real, 
                                firstComplex.Imaginary + secondComplex.Imaginary);
