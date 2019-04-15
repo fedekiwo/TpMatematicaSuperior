@@ -108,8 +108,6 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return new ComplexPolar(this.GetMymodule(), this.GetMyAlphaAngle());
         }
 
-        
-
     }
 
     
