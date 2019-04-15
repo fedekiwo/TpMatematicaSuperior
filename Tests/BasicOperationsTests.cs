@@ -7,16 +7,17 @@ namespace Tests
     [TestClass]
     public class BasicOperationsTests
     {
-        private Complex n1 = new Complex(-1, 3);
-        private Complex n2 = new Complex(2, -5);
-        private Complex ComplexWithAngle0 = new Complex(4, 0);
-        private Complex ComplexWithAngle90 = new Complex(0, 2);
-        private Complex ComplexWithAngle180 = new Complex(-2, 0);
-        private Complex ComplexWithAngle270 = new Complex(0 , -8);
-        private Complex ComplexWithAngle45 = new Complex(1, 1);
-        private Complex ComplexWithAngle225 = new Complex(-1, -1);
-        private Complex ComplexWithAngle315 = new Complex(1, -1);
-        private Complex n3 = new Complex(4, -3);
+        private ComplexBinomic n1 = new ComplexBinomic(-1, 3);
+        private ComplexBinomic n2 = new ComplexBinomic(2, -5);
+        private ComplexBinomic ComplexWithAngle0 = new ComplexBinomic(4, 0);
+        private ComplexBinomic ComplexWithAngle90 = new ComplexBinomic(0, 2);
+        private ComplexBinomic ComplexWithAngle180 = new ComplexBinomic(-2, 0);
+        private ComplexBinomic ComplexWithAngle270 = new ComplexBinomic(0 , -8);
+        private ComplexBinomic ComplexWithAngle45 = new ComplexBinomic(1, 1);
+        private ComplexBinomic ComplexWithAngle225 = new ComplexBinomic(-1, -1);
+        private ComplexBinomic ComplexWithAngle315 = new ComplexBinomic(1, -1);
+        private ComplexBinomic n3 = new ComplexBinomic(4, -3);
+        
 
         [TestMethod]
         public void RealPartFromSumBetweenN1AndN2Equals1() {
