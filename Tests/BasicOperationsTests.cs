@@ -43,7 +43,22 @@ namespace Tests
             Assert.AreEqual(-2, (n1 * n2).RealPart);
         }
         [TestMethod]
+        public void RealPartFromN2Multiplied7Equals14()
+        {
+            Assert.AreEqual(14, (n2 * 7).RealPart);
+        }
+        [TestMethod]
         public void ImaginaryPartFromN1MultipliedN2EqualsMinus15() {
+            Assert.AreEqual(-15, (n1 * n2).ImaginaryPart);
+        }
+        [TestMethod]
+        public void ImaginaryPartFromN1MultipliedByScalar3Equals9()
+        {
+            Assert.AreEqual(9, (3 * n1).ImaginaryPart);
+        }
+        [TestMethod]
+        public void ImaginaryPartFrom3MultipliedN1Equals9()
+        {
             Assert.AreEqual(-15, (n1 * n2).ImaginaryPart);
         }
         [TestMethod]

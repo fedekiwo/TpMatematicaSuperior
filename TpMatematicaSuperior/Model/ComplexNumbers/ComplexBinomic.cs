@@ -93,6 +93,17 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
                                firstComplex.Imaginary * secondComplex.Imaginary);
         }
 
+        public static ComplexBinomic operator *(ComplexBinomic complex, double scalar)
+        {
+            return new ComplexBinomic(complex.Real * scalar,
+                               complex.Imaginary * scalar);
+        }
+
+        public static ComplexBinomic operator *(double scalar, ComplexBinomic complex)
+        {
+            return complex * scalar;
+        }
+
         public static ComplexBinomic operator /(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
         {
             double aux1, aux2, aux3;
