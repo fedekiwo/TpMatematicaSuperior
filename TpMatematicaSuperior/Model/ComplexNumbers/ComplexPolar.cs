@@ -39,10 +39,5 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
         }
 
-
-
-
-
-
     }
 }
