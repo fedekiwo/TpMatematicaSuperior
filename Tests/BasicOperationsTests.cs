@@ -1,6 +1,10 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TpMatematicaSuperior.Model.ComplexNumbers;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Tests
 {
@@ -138,6 +142,12 @@ namespace Tests
         }
 
         //-----------------tests Polar---------------------------------
+
+        [TestMethod]
+        public void modulePartMinus1OfAPolarComlexThrowError()
+        {
+            Assert.ThrowsException<InvalidModulePartInPolarException>(()=> new ComplexPolar(-1, 0));
+        }
 
         [TestMethod]
         public void anglePartFromP1MultipliedP2Equals5()

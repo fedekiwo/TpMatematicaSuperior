@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ComplexNumbers\InvalidModulePartInPolarException.cs" />
     <Compile Include="Model\ComplexNumbers\ComplexBinomic.cs" />
     <Compile Include="Model\ComplexNumbers\ComplexPolar.cs" />
     <Compile Include="Program.cs" />

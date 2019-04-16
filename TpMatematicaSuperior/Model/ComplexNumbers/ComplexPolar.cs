@@ -10,13 +10,22 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
     {
         private Double Module;
         private Double Angle;
+    
+
         public Double ModulePart { get { return Module; } }
         public Double AnglePart { get { return Angle; } }
 
         public ComplexPolar(Double Module, Double Angle)
         {
+            if (Module < 0)
+            {
+                throw new InvalidModulePartInPolarException();
+            }
+            else
+            { 
             this.Module = Module;
             this.Angle = Angle;
+             }
         }
 
         public string GetNumber()
