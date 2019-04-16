@@ -18,7 +18,7 @@ namespace Tests
         private ComplexBinomic ComplexWithAngle315 = new ComplexBinomic(1, -1);
         private ComplexBinomic n3 = new ComplexBinomic(4, -3);
 
-        private ComplexPolar p1 = new ComplexPolar(-1, 2);
+        private ComplexPolar p1 = new ComplexPolar(1, 2);
         private ComplexPolar p2 = new ComplexPolar(2, 3);
 
         //-----------------tests Binomic to Polar------------------------
@@ -45,6 +45,16 @@ namespace Tests
         public void AnglePartFromN1ConvertToPolarEquals3piOutOf4() =>
            Assert.AreEqual(Math.Atan(3 / (-1)) + Math.PI, n1.ConvertToPolarForm().AnglePart);
 
+        //-----------------tests Binomic to Polar------------------------
+
+        [TestMethod]
+        public void RealPartFromP1ConvertToBinomic2EqualsCos2() =>
+            Assert.AreEqual(Math.Cos(2), p1.ConvertToBinomicForm().RealPart);
+        
+        [TestMethod]
+        public void ImaginaryPartFromP2ConvertToBinomicEquals3piOutOf4() =>
+           Assert.AreEqual(2 * Math.Sin(3), p2.ConvertToBinomicForm().ImaginaryPart);
+          
 
         //-----------------tests Binomic---------------------------------
         [TestMethod]
@@ -126,6 +136,9 @@ namespace Tests
         {
             Assert.AreEqual(5, n3.GetMymodule());
         }
+
+        //-----------------tests Polar---------------------------------
+
         [TestMethod]
         public void anglePartFromP1MultipliedP2Equals5()
         {
@@ -134,7 +147,7 @@ namespace Tests
         [TestMethod]
         public void modulePartFromP1MultipliedP2EqualsMinus2()
         {
-            Assert.AreEqual(-2, (p1 * p2).ModulePart);
+            Assert.AreEqual(2, (p1 * p2).ModulePart);
         }
     }
 }
