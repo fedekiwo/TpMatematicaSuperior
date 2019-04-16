@@ -17,7 +17,10 @@ namespace Tests
         private ComplexBinomic ComplexWithAngle225 = new ComplexBinomic(-1, -1);
         private ComplexBinomic ComplexWithAngle315 = new ComplexBinomic(1, -1);
         private ComplexBinomic n3 = new ComplexBinomic(4, -3);
-        
+
+        private ComplexPolar p1 = new ComplexPolar(-1, 2);
+        private ComplexPolar p2 = new ComplexPolar(2, 3);
+
 
         [TestMethod]
         public void RealPartFromSumBetweenN1AndN2Equals1() {
@@ -82,6 +85,17 @@ namespace Tests
         public void ModuleFromN3Equals5()
         {
             Assert.AreEqual(5, n3.GetMymodule());
+        }
+        [TestMethod]
+        public void anglePartFromP1MultipliedP2Equals5()
+        {
+            Assert.AreEqual(5, (p1 * p2).AnglePart);
+        }
+
+        [TestMethod]
+        public void modulePartFromP1MultipliedP2EqualsMinus2()
+        {
+            Assert.AreEqual(-2, (p1 * p2).ModulePart);
         }
 
     }

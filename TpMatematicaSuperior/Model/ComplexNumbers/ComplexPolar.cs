@@ -29,10 +29,16 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return new ComplexBinomic(this.Module * Math.Cos(this.Angle) , this.Module * Math.Sin(this.Angle));
         }
 
+        public static ComplexPolar operator *(ComplexPolar firstComplex, ComplexPolar secondComplex)
+        {
+            return new ComplexPolar(firstComplex.Module * secondComplex.Module, firstComplex.Angle + secondComplex.Angle);
+;        }
+
         public ComplexPolar Potencia(double numero)
         {
             return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
         }
+
 
 
 
