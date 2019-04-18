@@ -11,56 +11,59 @@ namespace Tests
     [TestClass]
     public class BasicOperationsTests
     {
-        private ComplexBinomic n1 = new ComplexBinomic(-1, 3);
-        private ComplexBinomic n2 = new ComplexBinomic(2, -5);
-        private ComplexBinomic ComplexWithAngle0 = new ComplexBinomic(4, 0);
-        private ComplexBinomic ComplexWithAngle90 = new ComplexBinomic(0, 2);
-        private ComplexBinomic ComplexWithAngle180 = new ComplexBinomic(-2, 0);
-        private ComplexBinomic ComplexWithAngle270 = new ComplexBinomic(0 , -8);
-        private ComplexBinomic ComplexWithAngle45 = new ComplexBinomic(1, 1);
-        private ComplexBinomic ComplexWithAngle225 = new ComplexBinomic(-1, -1);
-        private ComplexBinomic ComplexWithAngle315 = new ComplexBinomic(1, -1);
-        private ComplexBinomic n3 = new ComplexBinomic(4, -3);
-
-        private ComplexPolar p1 = new ComplexPolar(1, 2);
-        private ComplexPolar p2 = new ComplexPolar(2, 3);
-
-        //-----------------tests Binomic to Polar------------------------
-
+        private readonly Complex n1 = new Complex(-1, 3);
+        private readonly Complex n2 = new Complex(2, -5);
+        private readonly Complex ComplexWithAngle0 = new Complex(4, 0);
+        private readonly Complex ComplexWithAngle90 = new Complex(0, 2);
+        private readonly Complex ComplexWithAngle180 = new Complex(-2, 0);
+        private readonly Complex ComplexWithAngle270 = new Complex(0, -8);
+        private readonly Complex ComplexWithAngle45 = new Complex(1, 1);
+        private readonly Complex ComplexWithAngle225 = new Complex(-1, -1);
+        private readonly Complex ComplexWithAngle315 = new Complex(1, -1);
+        private readonly Complex n3 = new Complex(4, -3);
+        private readonly Complex n4 = new Complex(0, 4);
+        private readonly Complex n5 = new Complex(-2, 0);
+        private readonly Complex n6 = new Complex(-60, 80);
         [TestMethod]
-        public void ModulePartFromN3convertToPolarEquals5() =>
-            Assert.AreEqual(5, n3.ConvertToPolarForm().ModulePart);
-
-        [TestMethod]
-        public void ModulePartFromN1ConvertToPolarEqualsPow10()
+        public void RealPartFromN6DividedByN3Equals()
         {
-            const int raizCuadrada = 2;
-            Assert.AreEqual(Math.Sqrt(10), n1.ConvertToPolarForm().ModulePart);
+            Assert.AreEqual(-19.2 , (n6 / n3).RealPart);
         }
         [TestMethod]
-        public void AnglePartFromComplexWithAngle0ConvertToPolarEquals0() =>
-           Assert.AreEqual(0, ComplexWithAngle0.ConvertToPolarForm().AnglePart);
-
+        public void ImaginaryPartFromN6DividedByN3Equals()
+        {
+            Assert.AreEqual(5.6, (n6 / n3).ImaginaryPart, 0.0000000000001);
+        }
         [TestMethod]
-        public void AnglePartFromComplexWithAngle90ConvertToPolarEquals90() =>
-           Assert.AreEqual(Math.PI/2, ComplexWithAngle90.ConvertToPolarForm().AnglePart);
-
+        public void AngleFromN6DividedByN3Equals270Deg()
+        {
+            Assert.AreEqual(2.85779854438147, (n6 / n3).GetMyAlphaAngle(), 0.000000000001);
+        }
         [TestMethod]
-        public void AnglePartFromN1ConvertToPolarEquals3piOutOf4() =>
-           Assert.AreEqual(Math.Atan(3 / (-1)) + Math.PI, n1.ConvertToPolarForm().AnglePart);
-
-        //-----------------tests Binomic to Polar------------------------
-
+        public void ModuleFromN6DividedByN3Equals20()
+        {
+            Assert.AreEqual(20, (n6 / n3).GetMymodule());
+        }
         [TestMethod]
-        public void RealPartFromP1ConvertToBinomic2EqualsCos2() =>
-            Assert.AreEqual(Math.Cos(2), p1.ConvertToBinomicForm().RealPart);
-        
+        public void RealPartFromN4DividedByN5Equals0()
+        {
+            Assert.AreEqual(0, (n4 / n5).RealPart);
+        }
         [TestMethod]
-        public void ImaginaryPartFromP2ConvertToBinomicEquals3piOutOf4() =>
-           Assert.AreEqual(2 * Math.Sin(3), p2.ConvertToBinomicForm().ImaginaryPart);
-          
-
-        //-----------------tests Binomic---------------------------------
+        public void ImaginaryPartFromN4DividedByN5EqualsMinus2()
+        {
+            Assert.AreEqual(-2, (n4 / n5).ImaginaryPart);
+        }
+        [TestMethod]
+        public void AngleFromN4DividedByN5Equals270Deg()
+        {
+            Assert.AreEqual(Math.PI * 3/2 , (n4 / n5).GetMyAlphaAngle());
+        }
+        [TestMethod]
+        public void ModuleFromN4DividedByN5Equals2()
+        {
+            Assert.AreEqual(2, (n4 / n5).GetMymodule());
+        }
         [TestMethod]
         public void RealPartFromSumBetweenN1AndN2Equals1() {
             Assert.AreEqual(1, (n1 + n2).RealPart);
@@ -139,25 +142,6 @@ namespace Tests
         public void ModuleFromN3Equals5()
         {
             Assert.AreEqual(5, n3.GetMymodule());
-        }
-
-        //-----------------tests Polar---------------------------------
-
-        [TestMethod]
-        public void modulePartMinus1OfAPolarComlexThrowError()
-        {
-            Assert.ThrowsException<InvalidModulePartInPolarException>(()=> new ComplexPolar(-1, 0));
-        }
-
-        [TestMethod]
-        public void anglePartFromP1MultipliedP2Equals5()
-        {
-            Assert.AreEqual(5, (p1 * p2).AnglePart);
-        }
-        [TestMethod]
-        public void modulePartFromP1MultipliedP2EqualsMinus2()
-        {
-            Assert.AreEqual(2, (p1 * p2).ModulePart);
         }
     }
 }
