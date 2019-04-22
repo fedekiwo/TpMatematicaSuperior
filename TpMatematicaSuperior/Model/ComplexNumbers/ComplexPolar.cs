@@ -28,6 +28,8 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
              }
         }
 
+        // 1. Estructura de Datos y Transformaciones
+
         public string GetNumber()
         {
             return "[" + this.Module.ToString() + " , " + this.Angle.ToString() + "]";
@@ -37,6 +39,8 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return new ComplexBinomic(this.Module * Math.Cos(this.Angle) , this.Module * Math.Sin(this.Angle));
         }
+
+        // 2. Operaciones Basicas
 
         public static ComplexPolar operator *(ComplexPolar firstComplex, ComplexPolar secondComplex)
         {

@@ -13,35 +13,39 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         public Double ImaginaryPart { get { return Imaginary; } }
         public Double RealPart { get { return Real; } }
 
-        public ComplexBinomic(Double Real, Double Imaginary) {
+        public ComplexBinomic(Double Real, Double Imaginary)
+        {
             this.Real = Real;
             this.Imaginary = Imaginary;
-            
+
         }
 
-        public string GetNumber() {
-            return this.Real.ToString() + " " + this.Imaginary.ToString() +  "j";
-        }
+        // 1. Estructura de Datos y Transformaciones
 
-        private ComplexBinomic GetMyConjugate() {
-            return new ComplexBinomic(this.Real, - this.Imaginary);
-        }
-
-        private ComplexBinomic GetMyOpposite()
+        public string GetNumber()
         {
-            return new ComplexBinomic(-this.Real, -this.Imaginary);
-        }
-        
-        public Double GetMymodule()
-        {
-            double sumOfTheSquares = this.GetMySumOfSquaresOf();
-            return Math.Sqrt(sumOfTheSquares);
+            return this.Real.ToString() + " " + this.Imaginary.ToString() + "j";
         }
 
-        public Double GetMySumOfSquaresOf()
+        public ComplexPolar ConvertToPolarForm()
         {
-            int potencia = 2;
-            return Math.Pow(this.Real, potencia) + Math.Pow(this.Imaginary, potencia);
+            return new ComplexPolar(this.GetMymodule(), this.GetMyAlphaAngle());
+        }
+
+        private double GetAngleCorrection()
+        {
+            double angleCorrection = 0;
+
+            if ((this.Real < 0 && this.Imaginary > 0) || (this.Real < 0 && this.Imaginary < 0))
+            {
+                angleCorrection = Math.PI;
+            }
+            else if (this.Imaginary < 0)
+            {
+                angleCorrection = 2 * Math.PI;
+            }
+
+            return angleCorrection;
         }
 
         public Double GetMyAlphaAngle()
@@ -59,36 +63,48 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             }
             else if (this.Imaginary == 0 && this.Real != 0 && this.Real < 0)
             {
-                angle = Math.PI; 
+                angle = Math.PI;
             }
 
             return angle;
         }
 
-        private double GetAngleCorrection()
+        public Double GetMymodule()
         {
-            double angleCorrection = 0;
-
-            if ((this.Real < 0 && this.Imaginary > 0) || (this.Real < 0 && this.Imaginary < 0)) {
-                angleCorrection = Math.PI;
-            }
-            else if (this.Imaginary < 0)
-            {
-                angleCorrection = 2 * Math.PI;
-            }
-
-            return angleCorrection;
+            double sumOfTheSquares = this.GetMySumOfSquaresOf();
+            return Math.Sqrt(sumOfTheSquares);
         }
 
-        public static ComplexBinomic operator +(ComplexBinomic firstComplex, ComplexBinomic secondComplex) {
-            return new ComplexBinomic(firstComplex.Real + secondComplex.Real, 
+        public Double GetMySumOfSquaresOf()
+        {
+            int potencia = 2;
+            return Math.Pow(this.Real, potencia) + Math.Pow(this.Imaginary, potencia);
+        }
+
+        // 2. Operaciones Basicas
+
+        private ComplexBinomic GetMyConjugate()
+        {
+            return new ComplexBinomic(this.Real, -this.Imaginary);
+        }
+
+        private ComplexBinomic GetMyOpposite()
+        {
+            return new ComplexBinomic(-this.Real, -this.Imaginary);
+        }
+
+        public static ComplexBinomic operator +(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
+        {
+            return new ComplexBinomic(firstComplex.Real + secondComplex.Real,
                                firstComplex.Imaginary + secondComplex.Imaginary);
         }
-        public static ComplexBinomic operator -(ComplexBinomic firstComplex, ComplexBinomic secondComplex) {
+        public static ComplexBinomic operator -(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
+        {
             return firstComplex + secondComplex.GetMyOpposite();
         }
 
-        public static ComplexBinomic operator *(ComplexBinomic firstComplex, ComplexBinomic secondComplex) {
+        public static ComplexBinomic operator *(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
+        {
             return new ComplexBinomic(firstComplex.Real * secondComplex.Real,
                                firstComplex.Imaginary * secondComplex.Imaginary);
         }
@@ -110,16 +126,11 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             aux1 = (firstComplex.Real * secondComplex.Real) + (firstComplex.Imaginary * secondComplex.Imaginary);
             aux2 = (secondComplex.Real * firstComplex.Imaginary) - (firstComplex.Real * secondComplex.Imaginary);
             aux3 = Math.Pow(Convert.ToDouble(secondComplex.Real), 2) + Math.Pow(Convert.ToDouble(secondComplex.Imaginary), 2);
-            return new ComplexBinomic( aux1 / aux3 , aux2 / aux3);
-            
-        }
+            return new ComplexBinomic(aux1 / aux3, aux2 / aux3);
 
-        public ComplexPolar ConvertToPolarForm()
-        {
-            return new ComplexPolar(this.GetMymodule(), this.GetMyAlphaAngle());
         }
 
     }
 
-    
+
 }
