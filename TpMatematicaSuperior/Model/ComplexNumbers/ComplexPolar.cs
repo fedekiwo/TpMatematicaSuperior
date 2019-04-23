@@ -35,21 +35,44 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return "[" + this.Module.ToString() + " , " + this.Angle.ToString() + "]";
         }
 
+        private double GetImaginaryPartByModuleAndAngle()
+        {
+            return ModulePart * Math.Round(Math.Sin(AnglePart), 15);
+        }
+
+        private double GetRealPartByModuleAndAngle()
+        {
+            return ModulePart * Math.Round(Math.Cos(AnglePart), 15);
+        }
+
         public ComplexBinomic ConvertToBinomicForm()
         {
-            return new ComplexBinomic(this.Module * Math.Cos(this.Angle) , this.Module * Math.Sin(this.Angle));
+            return new ComplexBinomic(GetRealPartByModuleAndAngle(), GetImaginaryPartByModuleAndAngle());
         }
 
         // 2. Operaciones Basicas
+        public static ComplexPolar operator +(ComplexPolar firstComplex, ComplexPolar secondComplex)
+        {
+            return (firstComplex.ConvertToBinomicForm() + secondComplex.ConvertToBinomicForm()).ConvertToPolarForm();
+        }
+        public static ComplexPolar operator -(ComplexPolar firstComplex, ComplexPolar secondComplex)
+        {
+            return (firstComplex.ConvertToBinomicForm() - secondComplex.ConvertToBinomicForm()).ConvertToPolarForm();
+        }
 
         public static ComplexPolar operator *(ComplexPolar firstComplex, ComplexPolar secondComplex)
         {
             return new ComplexPolar(firstComplex.Module * secondComplex.Module, firstComplex.Angle + secondComplex.Angle);
-;        }
+;       }
 
         public ComplexPolar Potencia(double numero)
         {
             return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
+        }
+        public static ComplexPolar operator /(ComplexPolar firstComplex, ComplexPolar secondComplex)
+        {
+            return new ComplexPolar(firstComplex.ModulePart / secondComplex.ModulePart,
+                                    firstComplex.AnglePart - secondComplex.AnglePart);
         }
 
     }

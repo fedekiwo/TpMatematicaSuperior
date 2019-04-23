@@ -71,11 +71,10 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public Double GetMymodule()
         {
-            double sumOfTheSquares = this.GetMySumOfSquaresOf();
-            return Math.Sqrt(sumOfTheSquares);
+            return Math.Sqrt(this.GetMySumOfSquares());
         }
 
-        public Double GetMySumOfSquaresOf()
+        public Double GetMySumOfSquares()
         {
             int potencia = 2;
             return Math.Pow(this.Real, potencia) + Math.Pow(this.Imaginary, potencia);
@@ -122,12 +121,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public static ComplexBinomic operator /(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
         {
-            double aux1, aux2, aux3;
-            aux1 = (firstComplex.Real * secondComplex.Real) + (firstComplex.Imaginary * secondComplex.Imaginary);
-            aux2 = (secondComplex.Real * firstComplex.Imaginary) - (firstComplex.Real * secondComplex.Imaginary);
-            aux3 = Math.Pow(Convert.ToDouble(secondComplex.Real), 2) + Math.Pow(Convert.ToDouble(secondComplex.Imaginary), 2);
-            return new ComplexBinomic(aux1 / aux3, aux2 / aux3);
-
+            return (firstComplex.ConvertToPolarForm() / secondComplex.ConvertToPolarForm()).ConvertToBinomicForm();
         }
 
     }
