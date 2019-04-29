@@ -130,7 +130,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return ConvertToPolarForm().Potencia(numero).ConvertToBinomicForm();
         }
-
+       
     }
 
 

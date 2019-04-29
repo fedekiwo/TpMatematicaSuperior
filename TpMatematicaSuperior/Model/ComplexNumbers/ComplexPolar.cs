@@ -76,5 +76,29 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
         }
+        
+        public List<ComplexPolar> Raiz(double numero)
+        {
+            if (numero > 0)
+            {
+                List<ComplexPolar> raices = new List<ComplexPolar>();
+                int k = 0;
+                return ObtenerRaicesNesimas(numero,raices, k);
+            }
+            else
+            {
+                throw new InvalidRaizException();
+            }
+        }
+        public List<ComplexPolar> ObtenerRaicesNesimas(double numero, List<ComplexPolar> raices, int k)
+        {
+            if (k < numero)
+            {
+                raices.Add(new ComplexPolar(Math.Pow(this.Module,(1 / numero)), (this.Angle + 2 * k * Math.PI) / numero));
+                k++;
+                ObtenerRaicesNesimas(numero,raices, k);
+            }
+            return raices;
+        }
     }
 }

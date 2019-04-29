@@ -18,8 +18,10 @@ namespace Tests
         private readonly ComplexBinomic ComplexWithAngle270 = new ComplexBinomic(0, -8);
         private ComplexPolar p3 = new ComplexPolar(1, Math.PI/2);
         private ComplexPolar p4 = new ComplexPolar(2, 3*Math.PI / 2);
+        private ComplexPolar p5 = new ComplexPolar(1,0);
+        private ComplexPolar p6 = new ComplexPolar(8, 3 * Math.PI / 2);
 
-        //-----------------Potencia en Binomico------------------------
+        //-----------------Potencia en Binomica------------------------
         [TestMethod]
         public void theImaginaryPartOftheSquareOfN7Is2()
         {
@@ -44,7 +46,7 @@ namespace Tests
             Assert.AreEqual(-4, ComplexWithAngle90.Potencia(2).RealPart);
         }
 
-        //-----------------Potencia en Polar------------------------
+        //-----------------Potencia en Polar----------------------------
 
         [TestMethod]
         public void theModulelPartOfP4ToTheSeventhPowerIs128()
@@ -64,5 +66,39 @@ namespace Tests
             Assert.AreEqual(15*Math.PI/2, p4.Potencia(5).AnglePart);
         }
 
+        //-----------------Raiz en Binomica-------------------------
+
+
+        //-----------------Raiz en Polar----------------------------
+        [TestMethod]
+        public void negativeRootTrhowInvlidRaizException()
+        {
+            Assert.ThrowsException<InvalidRaizException>(() => p3.Raiz(-1));
+        }
+
+        [TestMethod]
+        public void theModuleOfTheFirstElementOfCubeRootOfP6Is2()
+        {
+            Assert.AreEqual(2, p6.Raiz(3).ElementAt(1).ModulePart);
+        }
+
+        [TestMethod]
+        public void theAngleOfTheFirstElementeOfCubeRootOfP4IsPi()
+        {
+            Assert.AreEqual(Math.PI / 2, p4.Raiz(3).ElementAt(0).AnglePart);
+        }
+
+        [TestMethod]
+        public void theAngleOfTheSecondElementeOfCubeRootOfP4Is7PiDivided6()
+        {
+            Assert.AreEqual(7* Math.PI / 6, p4.Raiz(3).ElementAt(1).AnglePart);
+        }
+
+        [TestMethod]
+        public void theAngleOfTheThirdElementeOfFourthRootOfP5IsPi()
+        {
+            Assert.AreEqual(Math.PI, p5.Raiz(4).ElementAt(2).AnglePart);
+        }
+       // fifth root
     }
 }
