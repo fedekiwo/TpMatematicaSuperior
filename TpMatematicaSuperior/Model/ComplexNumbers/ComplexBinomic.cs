@@ -124,6 +124,13 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             return (firstComplex.ConvertToPolarForm() / secondComplex.ConvertToPolarForm()).ConvertToBinomicForm();
         }
 
+        // 3. Operaciones avanzadas
+
+        public ComplexBinomic Potencia(double numero)
+        {
+            return ConvertToPolarForm().Potencia(numero).ConvertToBinomicForm();
+        }
+
     }
 
 

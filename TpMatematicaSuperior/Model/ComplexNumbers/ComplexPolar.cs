@@ -64,16 +64,17 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return new ComplexPolar(firstComplex.Module * secondComplex.Module, firstComplex.Angle + secondComplex.Angle);
 ;       }
-
-        public ComplexPolar Potencia(double numero)
-        {
-            return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
-        }
         public static ComplexPolar operator /(ComplexPolar firstComplex, ComplexPolar secondComplex)
         {
             return new ComplexPolar(firstComplex.ModulePart / secondComplex.ModulePart,
                                     firstComplex.AnglePart - secondComplex.AnglePart);
         }
 
+        // 3. Operaciones avanzadas
+
+        public ComplexPolar Potencia(double numero)
+        {
+            return new ComplexPolar(Math.Pow(this.Module, numero), numero * this.Angle);
+        }
     }
 }
