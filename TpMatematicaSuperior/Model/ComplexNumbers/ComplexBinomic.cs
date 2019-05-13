@@ -130,7 +130,20 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             return ConvertToPolarForm().Potencia(numero).ConvertToBinomicForm();
         }
-       
+
+        public List<ComplexBinomic> Raiz(double numero)
+        {
+            List<ComplexBinomic> raices = new List<ComplexBinomic>();
+            return ConvertToPolarForm().Raiz(numero).ConvertAll(x => x.ConvertToBinomicForm());
+        }
+
+        public List<ComplexBinomic> RaicesPrimitivas(double numero)
+        {
+            List<ComplexBinomic> raices = new List<ComplexBinomic>();
+            return ConvertToPolarForm().RaicesPrimitivas(numero).ConvertAll(x => x.ConvertToBinomicForm());
+
+        }
+
     }
 
 

@@ -100,5 +100,38 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             }
             return raices;
         }
+
+        public List<ComplexPolar> RaicesPrimitivas(double numero)
+        {
+            List<ComplexPolar> raicesPrimitivas = new List<ComplexPolar>();
+            List<ComplexPolar> raices = new List<ComplexPolar>();
+
+            raices = this.Raiz(numero);
+
+            int k = 0;
+
+            foreach(ComplexPolar raiz in raices)
+            {
+                if(mcd(numero,k)== 1)
+                {
+                    raicesPrimitivas.Add(raiz);
+                }
+                k++;
+            }
+
+            return raicesPrimitivas;
+        }
+
+        public double mcd(double a, double b)
+        {
+            double aux;
+            while (a > 0)
+            {
+                aux = a;
+                a = b % a;
+                b = aux;
+            }
+            return b;
+        }
     }
 }

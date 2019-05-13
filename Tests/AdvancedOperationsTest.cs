@@ -20,6 +20,7 @@ namespace Tests
         private ComplexPolar p4 = new ComplexPolar(2, 3*Math.PI / 2);
         private ComplexPolar p5 = new ComplexPolar(1,0);
         private ComplexPolar p6 = new ComplexPolar(8, 3 * Math.PI / 2);
+        private ComplexPolar p7 = new ComplexPolar(16, Math.PI );
 
         //-----------------Potencia en Binomica------------------------
         [TestMethod]
@@ -99,6 +100,38 @@ namespace Tests
         {
             Assert.AreEqual(Math.PI, p5.Raiz(4).ElementAt(2).AnglePart);
         }
-       // fifth root
+        // fifth root
+
+        //-----------------Raices primitivas ----------------------------
+
+        [TestMethod]
+        public void laCantidadDeRaicesPrimitivasDeP6Es4()
+        {
+            Assert.AreEqual(4, p6.RaicesPrimitivas(10).Count());
+        }
+
+        [TestMethod]
+        public void laCantidadDeRaicesPrimitivasDeP7Es2()
+        {
+            Assert.AreEqual(2, p7.RaicesPrimitivas(4).Count());
+        }
+
+        [TestMethod]
+        public void elModuloDeW1QueEsRaizPrimitivaDeP7Es2()
+        {
+            Assert.AreEqual(2, p7.RaicesPrimitivas(4).ElementAt(0).ModulePart);
+        }
+
+        [TestMethod]
+        public void elAnguloDeW1QueEsRaizPrimitivaDeP7Es3PiSobre4()
+        {
+            Assert.AreEqual(Math.PI * 3/4, p7.RaicesPrimitivas(4).ElementAt(0).AnglePart);
+        }
+
+        [TestMethod]
+        public void elAnguloDeW3QueEsRaizPrimitivaDeP7Es7PiSobre4()
+        {
+            Assert.AreEqual(Math.PI * 7 / 4, p7.RaicesPrimitivas(4).ElementAt(1).AnglePart);
+        }
     }
 }
