@@ -16,6 +16,10 @@ namespace Tests
         private Fasor f3 = new Fasor(8,"cos", 2, (Math.PI) / 6);
         private Fasor f4 = new Fasor(1, "sin", 5, (-Math.PI) /2);
         private Fasor f5 = new Fasor(1, "sin", 5, (Math.PI) / 3);
+        private Fasor f6 = new Fasor(1, "cos", 3, 0);
+        private Fasor f7 = new Fasor(1, "sin", 3, 0);
+
+        //-----------------tests Fasores-excepciones-----------------------------------
         [TestMethod]
         public void fasorWithArctgThrowError()
         {
@@ -26,13 +30,14 @@ namespace Tests
         {
             Assert.ThrowsException<InvalidOperationWithFasores>(() => f1+f2);
         }
+        //-----------------tests Fasores-Suma con igual funcion sinusoidal (cos)--------
         [TestMethod]
         public void FrequencyOfTheSumOfF1AndF3Is2()
         {
             Assert.AreEqual(2, (f1 + f3).GetFrequency);
         }
         [TestMethod]
-        public void FSonoidalFuntionOfTheSumOfF1AndF3IsCos()
+        public void FuntionSonoidalFuntionOfTheSumOfF1AndF3IsCos()
         {
             Assert.AreEqual("cos", (f1 + f3).GetFuntionSinusoidal);
         }
@@ -46,6 +51,7 @@ namespace Tests
         {
             Assert.AreEqual((-0.034), (f1 + f3).GetFaseAngle, 15);
         }
+        //-----------------tests Fasores-Suma con igual funcion sinusoidal (sin)--------
         [TestMethod]
         public void AmplitudefTheSumOfF4AndF5Is0and517()
         {
@@ -56,5 +62,22 @@ namespace Tests
         {
             Assert.AreEqual((-0.262), (f4 + f5).GetFaseAngle, 15);
         }
+        //-----------------tests Fasores con distinta funcion sinusoidal--------
+        [TestMethod]
+        public void FuntionSiusoidalOfTheRemainderOfF6AndF7IsCos() 
+        {
+            Assert.AreEqual("cos", (f6 - f7).GetFuntionSinusoidal);
+        }
+        //-----------------tests Fasores-Resta ---------------------------------
+        [TestMethod]
+        public void AmplitudelOfTheRemainderfF6AndF7Is0and211()
+        {
+            Assert.AreEqual(7.211, (f6 - f7).GetAmplitude,15);
+        }
+        public void FaseAnglelOfTheRemainderfF6AndF7Is0and211()
+        {
+            Assert.AreEqual((-0.982), (f6 - f7).GetFaseAngle, 15);
+        }
+
     }
 }

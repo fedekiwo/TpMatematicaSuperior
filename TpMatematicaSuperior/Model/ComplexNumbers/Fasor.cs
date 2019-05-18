@@ -10,12 +10,12 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
     public class Fasor
     {
         private Double Amplitude;
-        private String FuncionSinusoidal;
+        private String FuntionSinusoidal;
         private Double Frequency;
         private Double FaseAngle;
 
         public Double GetAmplitude { get { return Amplitude; } }
-        public String GetFuntionSinusoidal { get { return FuncionSinusoidal; } }
+        public String GetFuntionSinusoidal { get { return FuntionSinusoidal; } }
         public Double GetFrequency { get { return Frequency; } }
         public Double GetFaseAngle { get { return FaseAngle; } }
 
@@ -24,7 +24,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             if ((string.Equals(FuncionSinusoidal,"sin")) || (string.Equals(FuncionSinusoidal, "cos")))
             {
                 this.Amplitude = Amplitud;
-                this.FuncionSinusoidal = FuncionSinusoidal;
+                this.FuntionSinusoidal = FuncionSinusoidal;
                 this.Frequency = Frecuencia;
                 this.FaseAngle = AnguloFase;
             }
@@ -38,37 +38,58 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
         {
             if(firstFasor.GetFrequency == secondFasor.GetFrequency)
             {
-                return Sumar(firstFasor, secondFasor);
+                return resultOfOperationWithFasores(firstFasor, secondFasor,"sum");
             }
             else
             {
                 throw new InvalidOperationWithFasores();
             }
         }
- 
-        public static Fasor Sumar(Fasor firstFasor, Fasor secondFasor)
+        public static Fasor operator -(Fasor firstFasor, Fasor secondFasor)
         {
-            if (firstFasor.GetFuntionSinusoidal != secondFasor.GetFuntionSinusoidal)
+            if (firstFasor.GetFrequency == secondFasor.GetFrequency)
             {
-                CorrectionOfSenusoidalFunctions(firstFasor, secondFasor);
-            }
-             ComplexBinomic firstBinomic = ConvertToBinomic(firstFasor);
-             ComplexBinomic secondBinomic = ConvertToBinomic(secondFasor);
-             ComplexBinomic result = firstBinomic + secondBinomic;
-             return ConvertToFasor(result,firstFasor.GetFuntionSinusoidal,firstFasor.GetFrequency);
-
-        }
-    
-        public static void CorrectionOfSenusoidalFunctions(Fasor firstFasor,Fasor secondFasor)
-        {
-            if(firstFasor.GetFuntionSinusoidal == "sin")
-            {
-                secondFasor.FuncionSinusoidal = firstFasor.GetFuntionSinusoidal;
-                secondFasor.Frequency = secondFasor.GetFrequency - (Math.PI / 2);
+                return resultOfOperationWithFasores(firstFasor, secondFasor, "remainder");
             }
             else
             {
-                 CorrectionOfSenusoidalFunctions(secondFasor, firstFasor);
+                throw new InvalidOperationWithFasores();
+            }
+        }
+
+        public static Fasor resultOfOperationWithFasores(Fasor firstFasor, Fasor secondFasor, String operation)
+        {
+            if (!string.Equals(firstFasor.GetFuntionSinusoidal, secondFasor.GetFuntionSinusoidal))
+            {
+                CorrectionOfSinusoidalFunctions(firstFasor, secondFasor);
+            }
+             ComplexBinomic firstBinomic = ConvertToBinomic(firstFasor);
+             ComplexBinomic secondBinomic = ConvertToBinomic(secondFasor);
+             ComplexBinomic result = ResolveOperation(firstBinomic,secondBinomic, operation);
+             return ConvertToFasor(result,firstFasor.GetFuntionSinusoidal,firstFasor.GetFrequency);
+
+        }
+         public static ComplexBinomic ResolveOperation( ComplexBinomic firstBinomic, ComplexBinomic secondBinomic, String operation)
+        {
+            if (string.Equals("sum",operation))
+            {
+                return (firstBinomic + secondBinomic);
+            }
+            else
+            {
+                return (firstBinomic - secondBinomic);
+            }
+        }
+        public static void CorrectionOfSinusoidalFunctions(Fasor firstFasor,Fasor secondFasor) // siempre devolvemos el resultado en cos
+        {
+            if(firstFasor.GetFuntionSinusoidal == "sin")
+            {
+               firstFasor.FuntionSinusoidal = secondFasor.GetFuntionSinusoidal;
+               firstFasor.Frequency = firstFasor.GetFrequency - (Math.PI / 2);
+            }
+            else
+            {
+                 CorrectionOfSinusoidalFunctions(secondFasor, firstFasor);
             }
         }
 
