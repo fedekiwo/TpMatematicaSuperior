@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TpMatematicaSuperior.Model.ComplexNumbers;
 
 namespace TpMatematicaSuperior.Model.ComplexNumbers
 {
@@ -21,7 +20,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public Fasor(Double Amplitud, String FuncionSinusoidal, Double Frecuencia, Double AnguloFase)
         {
-            if ((string.Equals(FuncionSinusoidal,"sin")) || (string.Equals(FuncionSinusoidal, "cos")))
+            if ((string.Equals(FuncionSinusoidal, "sin")) || (string.Equals(FuncionSinusoidal, "cos")))
             {
                 this.Amplitude = Amplitud;
                 this.FuntionSinusoidal = FuncionSinusoidal;
@@ -36,9 +35,9 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public static Fasor operator +(Fasor firstFasor, Fasor secondFasor)
         {
-            if(firstFasor.GetFrequency == secondFasor.GetFrequency)
+            if (firstFasor.GetFrequency == secondFasor.GetFrequency)
             {
-                return resultOfOperationWithFasores(firstFasor, secondFasor,"sum");
+                return resultOfOperationWithFasores(firstFasor, secondFasor, "sum");
             }
             else
             {
@@ -63,15 +62,15 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             {
                 CorrectionOfSinusoidalFunctions(firstFasor, secondFasor);
             }
-             ComplexBinomic firstBinomic = ConvertToBinomic(firstFasor);
-             ComplexBinomic secondBinomic = ConvertToBinomic(secondFasor);
-             ComplexBinomic result = ResolveOperation(firstBinomic,secondBinomic, operation);
-             return ConvertToFasor(result,firstFasor.GetFuntionSinusoidal,firstFasor.GetFrequency);
+            ComplexBinomic firstBinomic = ConvertToBinomic(firstFasor);
+            ComplexBinomic secondBinomic = ConvertToBinomic(secondFasor);
+            ComplexBinomic result = ResolveOperation(firstBinomic, secondBinomic, operation);
+            return ConvertToFasor(result, firstFasor.GetFuntionSinusoidal, firstFasor.GetFrequency);
 
         }
-         public static ComplexBinomic ResolveOperation( ComplexBinomic firstBinomic, ComplexBinomic secondBinomic, String operation)
+        public static ComplexBinomic ResolveOperation(ComplexBinomic firstBinomic, ComplexBinomic secondBinomic, String operation)
         {
-            if (string.Equals("sum",operation))
+            if (string.Equals("sum", operation))
             {
                 return (firstBinomic + secondBinomic);
             }
@@ -80,16 +79,16 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
                 return (firstBinomic - secondBinomic);
             }
         }
-        public static void CorrectionOfSinusoidalFunctions(Fasor firstFasor,Fasor secondFasor) // siempre devolvemos el resultado en cos
+        public static void CorrectionOfSinusoidalFunctions(Fasor firstFasor, Fasor secondFasor) // siempre devolvemos el resultado en cos
         {
-            if(firstFasor.GetFuntionSinusoidal == "sin")
+            if (firstFasor.GetFuntionSinusoidal == "sin")
             {
-               firstFasor.FuntionSinusoidal = secondFasor.GetFuntionSinusoidal;
-               firstFasor.Frequency = firstFasor.GetFrequency - (Math.PI / 2);
+                firstFasor.FuntionSinusoidal = secondFasor.GetFuntionSinusoidal;
+                firstFasor.Frequency = firstFasor.GetFrequency - (Math.PI / 2);
             }
             else
             {
-                 CorrectionOfSinusoidalFunctions(secondFasor, firstFasor);
+                CorrectionOfSinusoidalFunctions(secondFasor, firstFasor);
             }
         }
 

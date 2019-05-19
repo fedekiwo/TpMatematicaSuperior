@@ -52,6 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ComplexNumbers\Fasor.cs" />
+    <Compile Include="Model\ComplexNumbers\InvalidFasorException.cs" />
+    <Compile Include="Model\ComplexNumbers\InvalidOperationWithFasores.cs" />
     <Compile Include="Model\ComplexNumbers\InvalidRaizException.cs" />
     <Compile Include="Model\ComplexNumbers\InvalidModulePartInPolarException.cs" />
     <Compile Include="Model\ComplexNumbers\ComplexBinomic.cs" />

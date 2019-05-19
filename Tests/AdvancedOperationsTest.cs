@@ -21,6 +21,9 @@ namespace Tests
         private ComplexPolar p5 = new ComplexPolar(1,0);
         private ComplexPolar p6 = new ComplexPolar(8, 3 * Math.PI / 2);
         private ComplexPolar p7 = new ComplexPolar(16, Math.PI );
+        private readonly ComplexBinomic n8 = new ComplexBinomic(0, 8);
+        private readonly ComplexBinomic n9 = new ComplexBinomic(-16, 0);
+
 
         //-----------------Potencia en Binomica------------------------
         [TestMethod]
@@ -68,6 +71,24 @@ namespace Tests
         }
 
         //-----------------Raiz en Binomica-------------------------
+
+        [TestMethod]
+        public void laRaizCubicaDeN8TieneParteImaginaria1j()
+        {
+            Assert.AreEqual( 1 , n8.Raiz(3).ElementAt(1).ImaginaryPart);
+        }
+
+        [TestMethod]
+        public void laRaizCuadradaDeN9tieneParteReal0()
+        {
+            Assert.AreEqual( 0 , n9.Raiz(2).ElementAt(0).RealPart);
+        }
+
+        [TestMethod]
+        public void laRaizCuadradaDeN9tieneParteImaginaria4j()
+        {
+            Assert.AreEqual(4, n9.Raiz(2).ElementAt(0).ImaginaryPart);
+        }
 
 
         //-----------------Raiz en Polar----------------------------
