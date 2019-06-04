@@ -21,5 +21,69 @@ namespace TpMatematicaSuperior
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = textBox1.Text + "/" + textBox2.Text;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = textBox1.Text + "-" + textBox2.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            textBox4.Text = textBox1.Text + "+" + textBox2.Text;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = textBox1.Text + "*" + textBox2.Text;
+        }
     }
 }
