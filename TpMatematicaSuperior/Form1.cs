@@ -43,6 +43,7 @@ namespace TpMatematicaSuperior
 
         }
 
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -59,6 +60,11 @@ namespace TpMatematicaSuperior
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -80,6 +86,7 @@ namespace TpMatematicaSuperior
                     ComplexBinomic suma = num1 + num2;
                     textBox4.Text = textBox1.Text + " + " + textBox2.Text;
                     textBox3.Text = suma.GetNumber().ToString();
+                    textBox5.Text = "No se permite la suma de dos numeros en forma polar";
 
                 }
                 else
@@ -104,7 +111,7 @@ namespace TpMatematicaSuperior
 
         private bool verificarFormaPolar(string numero)
         {
-            return numero.Substring(0, 1) == "[" && numero.Contains(',') && numero.Substring(numero.Length - 1, 1) == "]";
+            return numero.Substring(0, 1) == "[" && numero.Contains(';') && numero.Substring(numero.Length - 1, 1) == "]";
         }
 
         private ComplexBinomic validar(string numero)
@@ -154,18 +161,81 @@ namespace TpMatematicaSuperior
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox4.Text = textBox1.Text + " - " + textBox2.Text;
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con numeros complejos");
+            }
+            else
+            {
+                string primerNumero = textBox1.Text;
+                string segundoNumero = textBox2.Text;
+                if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexBinomic num2 = validar(segundoNumero);
+                    ComplexBinomic resta = num1 - num2;
+                    textBox4.Text = textBox1.Text + " - " + textBox2.Text;
+                    textBox3.Text = resta.GetNumber().ToString();
+                    textBox5.Text = "No se permite la resta de dos numeros en forma polar";
+
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
+
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox4.Text = textBox1.Text + " * " + textBox2.Text;
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con numeros complejos");
+            }
+            else
+            {
+                string primerNumero = textBox1.Text;
+                string segundoNumero = textBox2.Text;
+                if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexBinomic num2 = validar(segundoNumero);
+                    ComplexBinomic producto = num1 * num2;
+                    textBox4.Text = textBox1.Text + " * " + textBox2.Text;
+                    textBox3.Text = producto.GetNumber().ToString();
+                    textBox5.Text = producto.ConvertToPolarForm().GetNumber().ToString();
+
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox4.Text = textBox1.Text + " / " + textBox2.Text;
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con numeros complejos");
+            }
+            else
+            {
+                string primerNumero = textBox1.Text;
+                string segundoNumero = textBox2.Text;
+                if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexBinomic num2 = validar(segundoNumero);
+                    ComplexBinomic division = num1 / num2;
+                    textBox4.Text = textBox1.Text + " / " + textBox2.Text;
+                    textBox3.Text = division.GetNumber().ToString();
+                    textBox5.Text = division.ConvertToPolarForm().GetNumber().ToString();
+
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -176,5 +246,10 @@ namespace TpMatematicaSuperior
             textBox4.Clear();
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+  
     }
 }

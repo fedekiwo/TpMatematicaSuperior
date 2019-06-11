@@ -32,7 +32,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public string GetNumber()
         {
-            return "[" + this.Module.ToString() + " , " + this.Angle.ToString() + "]";
+            return " [ " + this.Module.ToString() + " , " + this.Angle.ToString() + " ] ";
         }
 
         private double GetImaginaryPartByModuleAndAngle()
