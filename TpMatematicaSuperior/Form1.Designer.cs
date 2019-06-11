@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -59,7 +60,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.label12 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonPotencia = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -356,7 +357,7 @@
             this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.button7);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.buttonPotencia);
             this.tabPage2.Controls.Add(this.textBox9);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.textBox8);
@@ -401,15 +402,15 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button1
+            // buttonPotencia
             // 
-            this.button1.Location = new System.Drawing.Point(90, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "POTENCIA";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonPotencia.Location = new System.Drawing.Point(90, 144);
+            this.buttonPotencia.Name = "buttonPotencia";
+            this.buttonPotencia.Size = new System.Drawing.Size(119, 23);
+            this.buttonPotencia.TabIndex = 18;
+            this.buttonPotencia.Text = "POTENCIA";
+            this.buttonPotencia.UseVisualStyleBackColor = true;
+            this.buttonPotencia.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox9
             // 
@@ -498,9 +499,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(929, 452);
             this.Controls.Add(this.tabControl4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "NCOM";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl4.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
@@ -545,7 +547,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonPotencia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabPage tabPage4;
