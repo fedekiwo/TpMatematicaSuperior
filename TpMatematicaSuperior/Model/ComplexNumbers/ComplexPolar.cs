@@ -28,11 +28,16 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
              }
         }
 
+        public ComplexPolar Redondear()
+        {
+            return new ComplexPolar(Math.Round(ModulePart, 5), Math.Round(AnglePart, 5));
+        }
+
         // 1. Estructura de Datos y Transformaciones
 
         public string GetNumber()
         {
-            return " [ " + this.Module.ToString() + " , " + this.Angle.ToString() + " ] ";
+            return " [ " + this.Module.ToString() + " ; " + this.Angle.ToString() + " ] ";
         }
 
         private double GetImaginaryPartByModuleAndAngle()

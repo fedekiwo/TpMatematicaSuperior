@@ -20,6 +20,11 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         }
 
+        public ComplexBinomic Redondear()
+        {
+            return new ComplexBinomic(Math.Round(RealPart, 5), Math.Round(ImaginaryPart, 5));
+        }
+
         // 1. Estructura de Datos y Transformaciones
 
         public string GetNumber()

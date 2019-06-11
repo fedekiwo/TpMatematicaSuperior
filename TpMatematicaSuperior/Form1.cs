@@ -82,12 +82,12 @@ namespace TpMatematicaSuperior
                 string segundoNumero = textBox2.Text;
                 if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexBinomic num2 = validar(segundoNumero);
-                    ComplexBinomic suma = num1 + num2;
+                    ComplexPolar num1 = validar(primerNumero);
+                    ComplexPolar num2 = validar(segundoNumero);
+                    ComplexPolar suma = num1 + num2;
                     textBox4.Text = textBox1.Text + " + " + textBox2.Text;
-                    textBox3.Text = suma.GetNumber().ToString();
-                    textBox5.Text = suma.ConvertToPolarForm().GetNumber().ToString();
+                    textBox3.Text = suma.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox5.Text = suma.GetNumber().ToString();
 
                 }
                 else
@@ -97,9 +97,9 @@ namespace TpMatematicaSuperior
 
         private bool chequearQueEsComplejo(string numero)
         {
-            if ( verificarFormaBinomica(numero) )
+            if (verificarFormaBinomica(numero))
                 return true;
-            else if ( verificarFormaPolar(numero) )
+            else if (verificarFormaPolar(numero))
                 return true;
             else
                 return false;
@@ -115,9 +115,9 @@ namespace TpMatematicaSuperior
             return numero.Substring(0, 1) == "[" && numero.Contains(';') && numero.Substring(numero.Length - 1, 1) == "]";
         }
 
-        private ComplexBinomic validar(string numero)
+        private ComplexPolar validar(string numero)
         {
-            if( verificarFormaBinomica(numero))
+            if (verificarFormaBinomica(numero))
             {
                 numero = numero.Replace("(", "");
                 numero = numero.Replace(")", "");
@@ -128,7 +128,9 @@ namespace TpMatematicaSuperior
 
                 listaTransformada = transformarStringADouble(partesNumeroBinomico);
 
-                return new ComplexBinomic( listaTransformada.ElementAt(0), listaTransformada.ElementAt(1) );
+                ComplexBinomic numeroBinomico = new ComplexBinomic(listaTransformada.ElementAt(0), listaTransformada.ElementAt(1));
+
+                return numeroBinomico.ConvertToPolarForm();
             }
             else
             {
@@ -143,7 +145,7 @@ namespace TpMatematicaSuperior
 
                 ComplexPolar numeroPolar = new ComplexPolar(listaTransformada.ElementAt(0), listaTransformada.ElementAt(1));
 
-                return numeroPolar.ConvertToBinomicForm();
+                return numeroPolar;
 
             }
         }
@@ -152,7 +154,7 @@ namespace TpMatematicaSuperior
         {
             List<double> listaNueva = new List<double>();
 
-            foreach(String numero in lista)
+            foreach (String numero in lista)
             {
                 listaNueva.Add(Convert.ToDouble(numero));
             }
@@ -172,19 +174,19 @@ namespace TpMatematicaSuperior
                 string segundoNumero = textBox2.Text;
                 if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexBinomic num2 = validar(segundoNumero);
-                    ComplexBinomic resta = num1 - num2;
+                    ComplexPolar num1 = validar(primerNumero);
+                    ComplexPolar num2 = validar(segundoNumero);
+                    ComplexPolar resta = num1 - num2;
                     textBox4.Text = textBox1.Text + " - " + textBox2.Text;
-                    textBox3.Text = resta.GetNumber().ToString();
-                    textBox5.Text = resta.ConvertToPolarForm().GetNumber().ToString();
+                    textBox3.Text = resta.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox5.Text = resta.GetNumber().ToString();
 
                 }
                 else
                     MessageBox.Show("No es un numero complejo ");
             }
 
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -199,12 +201,12 @@ namespace TpMatematicaSuperior
                 string segundoNumero = textBox2.Text;
                 if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexBinomic num2 = validar(segundoNumero);
-                    ComplexBinomic producto = num1 * num2;
+                    ComplexPolar num1 = validar(primerNumero);
+                    ComplexPolar num2 = validar(segundoNumero);
+                    ComplexPolar producto = num1 * num2;
                     textBox4.Text = textBox1.Text + " * " + textBox2.Text;
-                    textBox3.Text = producto.GetNumber().ToString();
-                    textBox5.Text = producto.ConvertToPolarForm().GetNumber().ToString();
+                    textBox3.Text = producto.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox5.Text = producto.GetNumber().ToString();
 
                 }
                 else
@@ -225,18 +227,18 @@ namespace TpMatematicaSuperior
                 string segundoNumero = textBox2.Text;
                 if (chequearQueEsComplejo(primerNumero) && chequearQueEsComplejo(segundoNumero))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexBinomic num2 = validar(segundoNumero);
-                    ComplexBinomic division = num1 / num2;
+                    ComplexPolar num1 = validar(primerNumero);
+                    ComplexPolar num2 = validar(segundoNumero);
+                    ComplexPolar division = num1 / num2;
                     textBox4.Text = textBox1.Text + " / " + textBox2.Text;
-                    textBox3.Text = division.GetNumber().ToString();
-                    textBox5.Text = division.ConvertToPolarForm().GetNumber().ToString();
+                    textBox3.Text = division.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox5.Text = division.GetNumber().ToString();
 
                 }
                 else
                     MessageBox.Show("No es un numero complejo ");
             }
-            
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -252,10 +254,10 @@ namespace TpMatematicaSuperior
         {
 
         }
-        
+
 
         // -----OPERACIONES AVANZADAS-------
-    
+
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -294,10 +296,11 @@ namespace TpMatematicaSuperior
 
                 if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexBinomic potencia = num1.Potencia(factor);
-                    textBox8.Text = potencia.GetNumber().ToString();
-                    textBox9.Text = potencia.ConvertToPolarForm().GetNumber().ToString();
+                    ComplexPolar num1 = validar(primerNumero);
+                    ComplexPolar potencia = num1.Potencia(factor);
+
+                    textBox8.Text = potencia.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox9.Text = potencia.GetNumber().ToString();
 
                 }
                 else
@@ -318,9 +321,8 @@ namespace TpMatematicaSuperior
 
                 if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
-                    ComplexPolar num1Pol = new ComplexPolar(num1.ConvertToPolarForm().ModulePart, num1.ConvertToPolarForm().AnglePart);
-                    List<ComplexPolar> raicesPrim = num1Pol.Raiz(factor);
+                    ComplexPolar num1 = validar(primerNumero);
+                    List<ComplexPolar> raicesPrim = num1.Raiz(factor);
 
                     //ACA HABRIA QUE COMPLETAR LA TABLA CON LAS RAICES PRIMITIVAS
                 }
@@ -366,7 +368,7 @@ namespace TpMatematicaSuperior
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (textBox10.Text == "" )
+            if (textBox10.Text == "")
             {
                 MessageBox.Show("Falta completar el campo con un numero complejo");
             }
@@ -376,10 +378,10 @@ namespace TpMatematicaSuperior
 
                 if (chequearQueEsComplejo(primerNumero))
                 {
-                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexPolar num1 = validar(primerNumero);
 
-                    textBox11.Text = num1.GetNumber().ToString();
-                    textBox12.Text = num1.ConvertToPolarForm().GetNumber().ToString();
+                    textBox11.Text = num1.ConvertToBinomicForm().GetNumber().ToString();
+                    textBox12.Text = num1.GetNumber().ToString();
 
                 }
                 else
