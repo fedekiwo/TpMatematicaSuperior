@@ -23,6 +23,8 @@ namespace TpMatematicaSuperior
 
         }
 
+        // -------OPERACIONES BASICAS----------
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -42,7 +44,6 @@ namespace TpMatematicaSuperior
         {
 
         }
-
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -86,7 +87,7 @@ namespace TpMatematicaSuperior
                     ComplexBinomic suma = num1 + num2;
                     textBox4.Text = textBox1.Text + " + " + textBox2.Text;
                     textBox3.Text = suma.GetNumber().ToString();
-                    textBox5.Text = "No se permite la suma de dos numeros en forma polar";
+                    textBox5.Text = suma.ConvertToPolarForm().GetNumber().ToString();
 
                 }
                 else
@@ -176,7 +177,7 @@ namespace TpMatematicaSuperior
                     ComplexBinomic resta = num1 - num2;
                     textBox4.Text = textBox1.Text + " - " + textBox2.Text;
                     textBox3.Text = resta.GetNumber().ToString();
-                    textBox5.Text = "No se permite la resta de dos numeros en forma polar";
+                    textBox5.Text = resta.ConvertToPolarForm().GetNumber().ToString();
 
                 }
                 else
@@ -251,13 +252,31 @@ namespace TpMatematicaSuperior
         {
 
         }
+        
 
+        // -----OPERACIONES AVANZADAS-------
+    
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }
@@ -286,26 +305,6 @@ namespace TpMatematicaSuperior
             }
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             if (textBox6.Text == "" || textBox7.Text == "")
@@ -330,7 +329,75 @@ namespace TpMatematicaSuperior
             }
         }
 
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        //---------TRANSFORMACIONES--------
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBox10.Text == "" )
+            {
+                MessageBox.Show("Falta completar el campo con un numero complejo");
+            }
+            else
+            {
+                string primerNumero = textBox10.Text;
+
+                if (chequearQueEsComplejo(primerNumero))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+
+                    textBox11.Text = num1.GetNumber().ToString();
+                    textBox12.Text = num1.ConvertToPolarForm().GetNumber().ToString();
+
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
         {
 
         }
