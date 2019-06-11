@@ -244,6 +244,7 @@ namespace TpMatematicaSuperior
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
+            textBox5.Clear();
         }
 
         private void label6_Click(object sender, EventArgs e)

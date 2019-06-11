@@ -81,7 +81,7 @@ namespace Tests
         }
         [TestMethod]
         public void RealPartFromN1MultipliedN2EqualsMinus2() {
-            Assert.AreEqual(-2, (n1 * n2).RealPart);
+            Assert.AreEqual(13, (n1 * n2).RealPart);
         }
         [TestMethod]
         public void RealPartFromN2Multiplied7Equals14()
@@ -89,18 +89,13 @@ namespace Tests
             Assert.AreEqual(14, (n2 * 7).RealPart);
         }
         [TestMethod]
-        public void ImaginaryPartFromN1MultipliedN2EqualsMinus15() {
-            Assert.AreEqual(-15, (n1 * n2).ImaginaryPart);
+        public void ImaginaryPartFromN1MultipliedN2Equals11() {
+            Assert.AreEqual(11, (n1 * n2).ImaginaryPart);
         }
         [TestMethod]
         public void ImaginaryPartFromN1MultipliedByScalar3Equals9()
         {
             Assert.AreEqual(9, (3 * n1).ImaginaryPart);
-        }
-        [TestMethod]
-        public void ImaginaryPartFrom3MultipliedN1Equals9()
-        {
-            Assert.AreEqual(-15, (n1 * n2).ImaginaryPart);
         }
         [TestMethod]
         public void AngleFromComplexWithAngle0Is0()

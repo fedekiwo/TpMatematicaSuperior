@@ -104,8 +104,8 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public static ComplexBinomic operator *(ComplexBinomic firstComplex, ComplexBinomic secondComplex)
         {
-            return new ComplexBinomic(firstComplex.Real * secondComplex.Real,
-                               firstComplex.Imaginary * secondComplex.Imaginary);
+            return new ComplexBinomic(firstComplex.Real * secondComplex.Real - firstComplex.Imaginary * secondComplex.Imaginary,
+                               firstComplex.Real * secondComplex.ImaginaryPart + secondComplex.RealPart * firstComplex.Imaginary);
         }
 
         public static ComplexBinomic operator *(ComplexBinomic complex, double scalar)
