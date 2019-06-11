@@ -24,7 +24,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public string GetNumber()
         {
-            return this.Real.ToString() + " " + this.Imaginary.ToString() + "j";
+            return this.Real.ToString() + " + " + this.Imaginary.ToString() + "j";
         }
 
         public ComplexPolar ConvertToPolarForm()
