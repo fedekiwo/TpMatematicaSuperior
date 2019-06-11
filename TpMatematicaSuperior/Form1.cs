@@ -251,6 +251,88 @@ namespace TpMatematicaSuperior
         {
 
         }
-  
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "" || textBox7.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con numeros complejos");
+            }
+            else
+            {
+                string primerNumero = textBox6.Text;
+                Int16 factor = new Int16();
+
+                if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexBinomic potencia = num1.Potencia(factor);
+                    textBox8.Text = potencia.GetNumber().ToString();
+                    textBox9.Text = potencia.ConvertToPolarForm().GetNumber().ToString();
+
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "" || textBox7.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con numeros complejos");
+            }
+            else
+            {
+                string primerNumero = textBox6.Text;
+                Int16 factor = new Int16();
+
+                if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
+                {
+                    ComplexBinomic num1 = validar(primerNumero);
+                    ComplexPolar num1Pol = new ComplexPolar(num1.ConvertToPolarForm().ModulePart, num1.ConvertToPolarForm().AnglePart);
+                    List<ComplexPolar> raicesPrim = num1Pol.Raiz(factor);
+
+                    //ACA HABRIA QUE COMPLETAR LA TABLA CON LAS RAICES PRIMITIVAS
+                }
+                else
+                    MessageBox.Show("No es un numero complejo ");
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
