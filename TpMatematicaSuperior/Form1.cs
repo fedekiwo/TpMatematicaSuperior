@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,7 +157,7 @@ namespace TpMatematicaSuperior
 
             foreach (String numero in lista)
             {
-                listaNueva.Add(Convert.ToDouble(numero));
+                listaNueva.Add(Convert.ToDouble(numero, new CultureInfo("en-US")));
             }
 
             return listaNueva;
