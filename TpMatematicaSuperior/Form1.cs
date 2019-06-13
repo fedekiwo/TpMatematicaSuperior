@@ -179,8 +179,8 @@ namespace TpMatematicaSuperior
                     ComplexPolar num2 = validar(segundoNumero);
                     ComplexPolar resta = num1 - num2;
                     textBox4.Text = textBox1.Text + " - " + textBox2.Text;
-                    textBox3.Text = resta.ConvertToBinomicForm().GetNumber().ToString();
-                    textBox5.Text = resta.GetNumber().ToString();
+                    textBox3.Text = resta.ConvertToBinomicForm().GetNumber();
+                    textBox5.Text = resta.GetNumber();
 
                 }
                 else
@@ -206,8 +206,8 @@ namespace TpMatematicaSuperior
                     ComplexPolar num2 = validar(segundoNumero);
                     ComplexPolar producto = num1 * num2;
                     textBox4.Text = textBox1.Text + " * " + textBox2.Text;
-                    textBox3.Text = producto.ConvertToBinomicForm().GetNumber().ToString();
-                    textBox5.Text = producto.GetNumber().ToString();
+                    textBox3.Text = producto.ConvertToBinomicForm().GetNumber();
+                    textBox5.Text = producto.GetNumber();
 
                 }
                 else
@@ -232,8 +232,8 @@ namespace TpMatematicaSuperior
                     ComplexPolar num2 = validar(segundoNumero);
                     ComplexPolar division = num1 / num2;
                     textBox4.Text = textBox1.Text + " / " + textBox2.Text;
-                    textBox3.Text = division.ConvertToBinomicForm().GetNumber().ToString();
-                    textBox5.Text = division.GetNumber().ToString();
+                    textBox3.Text = division.ConvertToBinomicForm().GetNumber();
+                    textBox5.Text = division.GetNumber();
 
                 }
                 else
@@ -458,6 +458,78 @@ namespace TpMatematicaSuperior
         {
 
         }
-      
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (textBox13.Text == "" || textBox16.Text == "" || textBox14.Text == "" || textBox13.Text == "" || textBox17.Text == "" || textBox15.Text == "" || textBox18.Text == "" || comboBox1.Text == "" || comboBox2.Text == "")
+            {
+                MessageBox.Show("Falta completar campos");
+            }
+            else
+            {
+
+                if (textBox13.Text == textBox16.Text)
+                {
+
+                    Fasor fasor1 = new Fasor(Convert.ToDouble(textBox15.Text, new CultureInfo("en-US")), comboBox1.Text, Convert.ToDouble(textBox13.Text, new CultureInfo("en-US")), Convert.ToDouble(textBox14.Text, new CultureInfo("en-US") ));
+                    Fasor fasor2 = new Fasor(Convert.ToDouble(textBox18.Text, new CultureInfo("en-US")), comboBox2.Text, Convert.ToDouble(textBox16.Text, new CultureInfo("en-US")), Convert.ToDouble(textBox17.Text, new CultureInfo("en-US")));
+
+                    Fasor suma = fasor1 + fasor2;
+
+                    textBox19.Text = suma.ObtenerFasor();
+                }
+                else
+                    MessageBox.Show("No se puede sumar dos funciones con distinta frecuencia");
+            }
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (textBox13.Text == "" || textBox16.Text == "" || textBox14.Text == "" || textBox13.Text == "" || textBox17.Text == "" || textBox15.Text == "" || textBox18.Text == "" || comboBox1.Text == "" || comboBox2.Text == "")
+            {
+                MessageBox.Show("Falta completar campos");
+            }
+            else
+            {
+
+                if (textBox13.Text == textBox16.Text )
+                {
+
+                    Fasor fasor1 = new Fasor(Convert.ToDouble(textBox15.Text, new CultureInfo("en-US")), comboBox1.Text, Convert.ToDouble(textBox13.Text, new CultureInfo("en-US")), Convert.ToDouble(textBox14.Text, new CultureInfo("en-US")));
+                    Fasor fasor2 = new Fasor(Convert.ToDouble(textBox18.Text, new CultureInfo("en-US")), comboBox2.Text, Convert.ToDouble(textBox16.Text, new CultureInfo("en-US")), Convert.ToDouble(textBox17.Text, new CultureInfo("en-US")));
+
+                    Fasor resta = fasor1 - fasor2;
+
+                    textBox19.Text = resta.ObtenerFasor();
+                }
+                else
+                    MessageBox.Show("No se puede restar dos funciones con distinta frecuencia");
+            }
+        }
     }
 }

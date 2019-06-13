@@ -20,19 +20,12 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         }
 
-        public ComplexBinomic Redondear()
-        {
-            return new ComplexBinomic(Math.Round(RealPart, 5), Math.Round(ImaginaryPart, 5));
-        }
 
         // 1. Estructura de Datos y Transformaciones
 
         public string GetNumber()
         {
-            if (this.Imaginary < 0)
-                return Math.Round(this.Real, 6).ToString() + " " + Math.Round(this.Imaginary, 6).ToString();
-            else
-                return Math.Round(this.Real, 6).ToString() + " + " + Math.Round(this.Imaginary, 6).ToString();
+                return Math.Round(this.Real, 6).ToString() + " + " + Math.Round(this.Imaginary, 6).ToString() + " j";
         }
 
         public ComplexPolar ConvertToPolarForm()

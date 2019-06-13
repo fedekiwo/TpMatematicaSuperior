@@ -33,6 +33,11 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             }
         }
 
+        public string ObtenerFasor()
+        {
+            return Math.Round(GetAmplitude,6) .ToString() + " . " + GetFuntionSinusoidal + "(" + Math.Round(GetFrequency,6).ToString() + "t" + " + " + Math.Round(GetFaseAngle,6).ToString() + ")"; 
+        }
+
         public static Fasor operator +(Fasor firstFasor, Fasor secondFasor)
         {
             if (firstFasor.GetFrequency == secondFasor.GetFrequency)
