@@ -288,7 +288,7 @@ namespace TpMatematicaSuperior
         {
             if (textBox6.Text == "" || textBox7.Text == "")
             {
-                MessageBox.Show("Falta completar los campos con numeros complejos");
+                MessageBox.Show("Falta completar los campos con un numero complejo o un factor");
             }
             else
             {
@@ -313,22 +313,33 @@ namespace TpMatematicaSuperior
         {
             if (textBox6.Text == "" || textBox7.Text == "")
             {
-                MessageBox.Show("Falta completar los campos con numeros complejos");
+                MessageBox.Show("Falta completar los campos con un numero complejo o un factor");
             }
             else
             {
+                listView1.Items.Clear();
+                
                 string primerNumero = textBox6.Text;
                 Int16 factor = new Int16();
 
                 if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
                 {
                     ComplexPolar num1 = validar(primerNumero);
-                    List<ComplexPolar> raicesPrim = num1.Raiz(factor);
+                    List<ComplexPolar> raicesNESIMAS = num1.Raiz(factor);
 
-                    //ACA HABRIA QUE COMPLETAR LA TABLA CON LAS RAICES PRIMITIVAS
+                    //ACA HABRIA QUE COMPLETAR LA TABLA CON LAS RAICES N-ESIMAS
+                    int i = 0;
+
+                    foreach(ComplexPolar raiz in raicesNESIMAS)
+                    {
+                        ListViewItem item = new ListViewItem( "W" + i);
+                        item.SubItems.Add(raiz.GetNumber());
+                        listView1.Items.Add(item);
+                        i++;
+                    }
                 }
                 else
-                    MessageBox.Show("No es un numero complejo ");
+                    MessageBox.Show("No es un numero complejo o un factor correcto ");
             }
         }
 
@@ -401,6 +412,16 @@ namespace TpMatematicaSuperior
         }
 
         private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

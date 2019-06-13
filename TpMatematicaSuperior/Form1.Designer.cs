@@ -57,7 +57,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label12 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.buttonPotencia = new System.Windows.Forms.Button();
@@ -70,6 +69,12 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnNumRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnValorRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -355,6 +360,9 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkGray;
             this.tabPage2.Controls.Add(this.listView1);
+            this.tabPage2.Controls.Add(this.listView2);
+            this.tabPage2.Controls.Add(this.label16);
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.buttonPotencia);
@@ -374,19 +382,10 @@
             this.tabPage2.Text = "Operaciones Avanzadas";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(454, 209);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(254, 176);
-            this.listView1.TabIndex = 22;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(451, 182);
+            this.label12.Location = new System.Drawing.Point(400, 182);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(109, 13);
             this.label12.TabIndex = 21;
@@ -394,11 +393,11 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(454, 144);
+            this.button7.Location = new System.Drawing.Point(403, 144);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(119, 23);
             this.button7.TabIndex = 20;
-            this.button7.Text = "RAICES N-ÉSIMAS";
+            this.button7.Text = "RAÍCES N-ÉSIMAS";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -493,6 +492,57 @@
             this.tabPage3.Text = "Suma Fasores";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(683, 144);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "RAÍCES PRIMITIVAS";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(683, 182);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 13);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Lista Raíces primitivas";
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(683, 209);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(200, 176);
+            this.listView2.TabIndex = 25;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnNumRaiz,
+            this.columnValorRaiz});
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(402, 209);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(200, 176);
+            this.listView1.TabIndex = 26;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            // 
+            // columnNumRaiz
+            // 
+            this.columnNumRaiz.Text = "Número Raíz";
+            // 
+            // columnValorRaiz
+            // 
+            this.columnValorRaiz.Text = "Valor";
+            this.columnValorRaiz.Width = 200;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,7 +599,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button buttonPotencia;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -558,6 +607,12 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnNumRaiz;
+        private System.Windows.Forms.ColumnHeader columnValorRaiz;
     }
 }
 
