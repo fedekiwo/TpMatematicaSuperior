@@ -28,6 +28,7 @@ namespace Tests
         private ComplexPolar p1 = new ComplexPolar(1, 2);
         private ComplexPolar p2 = new ComplexPolar(2, 3);
 
+
         //-----------------tests Binomic to Polar------------------------
 
         [TestMethod]
