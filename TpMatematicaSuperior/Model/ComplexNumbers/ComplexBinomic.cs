@@ -29,10 +29,10 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
 
         public string GetNumber()
         {
-            if(this.Imaginary < 0)
-                return this.Real.ToString() + " " + this.Imaginary.ToString() + " j";
+            if (this.Imaginary < 0)
+                return Math.Round(this.Real, 6).ToString() + " " + Math.Round(this.Imaginary, 6).ToString();
             else
-                return this.Real.ToString() + " + " + this.Imaginary.ToString() + " j";
+                return Math.Round(this.Real, 6).ToString() + " + " + Math.Round(this.Imaginary, 6).ToString();
         }
 
         public ComplexPolar ConvertToPolarForm()

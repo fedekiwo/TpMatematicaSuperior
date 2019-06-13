@@ -327,7 +327,6 @@ namespace TpMatematicaSuperior
                     ComplexPolar num1 = validar(primerNumero);
                     List<ComplexPolar> raicesNESIMAS = num1.Raiz(factor);
 
-                    //ACA HABRIA QUE COMPLETAR LA TABLA CON LAS RAICES N-ESIMAS
                     int i = 0;
 
                     foreach(ComplexPolar raiz in raicesNESIMAS)
@@ -343,7 +342,41 @@ namespace TpMatematicaSuperior
             }
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "" || textBox7.Text == "")
+            {
+                MessageBox.Show("Falta completar los campos con un numero complejo o un factor");
+            }
+            else
+            {
+                listView3.Items.Clear();
+
+                string primerNumero = textBox6.Text;
+                Int16 factor = new Int16();
+
+                if (chequearQueEsComplejo(primerNumero) && Int16.TryParse(textBox7.Text, out factor))
+                {
+                    ComplexPolar num1 = validar(primerNumero);
+                    List<ComplexPolar> raicesENESIMAS = num1.Raiz(factor);
+                    List<ComplexPolar> raicesPrim = num1.RaicesPrimitivas(factor);
+
+                    foreach (ComplexPolar raiz in raicesPrim)
+                    {
+                        int posicion = raicesENESIMAS.FindIndex(x => x.GetNumber() == raiz.GetNumber());
+                        ListViewItem item = new ListViewItem("W" + posicion);
+                        item.SubItems.Add(raiz.GetNumber());
+                        listView3.Items.Add(item);
+                        
+                    }
+                }
+                else
+                    MessageBox.Show("No es un numero complejo o un factor correcto ");
+            }
+
+        }
+
+            private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -365,6 +398,16 @@ namespace TpMatematicaSuperior
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -415,15 +458,6 @@ namespace TpMatematicaSuperior
         {
 
         }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

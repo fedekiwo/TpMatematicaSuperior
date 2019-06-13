@@ -71,10 +71,12 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnNumRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnValorRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -359,8 +361,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkGray;
+            this.tabPage2.Controls.Add(this.listView3);
             this.tabPage2.Controls.Add(this.listView1);
-            this.tabPage2.Controls.Add(this.listView2);
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label12);
@@ -500,6 +502,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "RAÍCES PRIMITIVAS";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
             // label16
             // 
@@ -510,15 +513,6 @@
             this.label16.TabIndex = 24;
             this.label16.Text = "Lista Raíces primitivas";
             // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(683, 209);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(200, 176);
-            this.listView2.TabIndex = 25;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
-            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -526,9 +520,9 @@
             this.columnValorRaiz});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(402, 209);
+            this.listView1.Location = new System.Drawing.Point(403, 209);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(200, 176);
+            this.listView1.Size = new System.Drawing.Size(231, 176);
             this.listView1.TabIndex = 26;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -536,12 +530,38 @@
             // 
             // columnNumRaiz
             // 
-            this.columnNumRaiz.Text = "Número Raíz";
+            this.columnNumRaiz.Text = "Raíz";
+            this.columnNumRaiz.Width = 39;
             // 
             // columnValorRaiz
             // 
             this.columnValorRaiz.Text = "Valor";
             this.columnValorRaiz.Width = 200;
+            // 
+            // listView3
+            // 
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView3.FullRowSelect = true;
+            this.listView3.GridLines = true;
+            this.listView3.Location = new System.Drawing.Point(683, 209);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(231, 176);
+            this.listView3.TabIndex = 27;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listView3.SelectedIndexChanged += new System.EventHandler(this.listView3_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Raíz";
+            this.columnHeader1.Width = 40;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Valor";
+            this.columnHeader2.Width = 200;
             // 
             // Form1
             // 
@@ -607,12 +627,14 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnNumRaiz;
         private System.Windows.Forms.ColumnHeader columnValorRaiz;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 
