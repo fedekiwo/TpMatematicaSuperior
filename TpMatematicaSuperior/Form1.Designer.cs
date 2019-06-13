@@ -57,6 +57,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnNumRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnValorRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label16 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.buttonPotencia = new System.Windows.Forms.Button();
@@ -69,14 +77,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnNumRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnValorRaiz = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl4.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -154,7 +154,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(159, 23);
             this.button6.TabIndex = 2;
-            this.button6.Text = "Realizar transformaciones";
+            this.button6.Text = "TRANSFORMAR";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -173,7 +173,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Numero";
+            this.label13.Text = "Número";
             // 
             // tabPage1
             // 
@@ -283,7 +283,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Expresion";
+            this.label5.Text = "Expresión";
             // 
             // buttonSuma
             // 
@@ -328,7 +328,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Numero 2";
+            this.label3.Text = "Número 2";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
@@ -338,7 +338,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Numero 1";
+            this.label2.Text = "Número 1";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -384,134 +384,30 @@
             this.tabPage2.Text = "Operaciones Avanzadas";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // label12
+            // listView3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(400, 182);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Lista Raices n-ésimas";
+            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView3.FullRowSelect = true;
+            this.listView3.GridLines = true;
+            this.listView3.Location = new System.Drawing.Point(647, 211);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(231, 176);
+            this.listView3.TabIndex = 27;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.listView3.View = System.Windows.Forms.View.Details;
+            this.listView3.SelectedIndexChanged += new System.EventHandler(this.listView3_SelectedIndexChanged);
             // 
-            // button7
+            // columnHeader1
             // 
-            this.button7.Location = new System.Drawing.Point(403, 144);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(119, 23);
-            this.button7.TabIndex = 20;
-            this.button7.Text = "RAÍCES N-ÉSIMAS";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.columnHeader1.Text = "Raíz";
+            this.columnHeader1.Width = 40;
             // 
-            // buttonPotencia
+            // columnHeader2
             // 
-            this.buttonPotencia.Location = new System.Drawing.Point(90, 144);
-            this.buttonPotencia.Name = "buttonPotencia";
-            this.buttonPotencia.Size = new System.Drawing.Size(119, 23);
-            this.buttonPotencia.TabIndex = 18;
-            this.buttonPotencia.Text = "POTENCIA";
-            this.buttonPotencia.UseVisualStyleBackColor = true;
-            this.buttonPotencia.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(90, 268);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(278, 20);
-            this.textBox9.TabIndex = 17;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(87, 243);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(125, 13);
-            this.label11.TabIndex = 16;
-            this.label11.Text = "Resultado en forma polar";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(90, 209);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(278, 20);
-            this.textBox8.TabIndex = 6;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(87, 182);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(144, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Resultado en forma binomica";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(90, 109);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(278, 20);
-            this.textBox7.TabIndex = 5;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(87, 84);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 13);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Factor";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(90, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(278, 20);
-            this.textBox6.TabIndex = 1;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(87, 18);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Numero 1";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(922, 426);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Suma Fasores";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(683, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "RAÍCES PRIMITIVAS";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(683, 182);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 13);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "Lista Raíces primitivas";
+            this.columnHeader2.Text = "Valor";
+            this.columnHeader2.Width = 200;
             // 
             // listView1
             // 
@@ -520,7 +416,7 @@
             this.columnValorRaiz});
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(403, 209);
+            this.listView1.Location = new System.Drawing.Point(367, 211);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(231, 176);
             this.listView1.TabIndex = 26;
@@ -538,30 +434,134 @@
             this.columnValorRaiz.Text = "Valor";
             this.columnValorRaiz.Width = 200;
             // 
-            // listView3
+            // label16
             // 
-            this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView3.FullRowSelect = true;
-            this.listView3.GridLines = true;
-            this.listView3.Location = new System.Drawing.Point(683, 209);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(231, 176);
-            this.listView3.TabIndex = 27;
-            this.listView3.UseCompatibleStateImageBehavior = false;
-            this.listView3.View = System.Windows.Forms.View.Details;
-            this.listView3.SelectedIndexChanged += new System.EventHandler(this.listView3_SelectedIndexChanged);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(647, 184);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 13);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "Lista Raíces primitivas";
             // 
-            // columnHeader1
+            // button1
             // 
-            this.columnHeader1.Text = "Raíz";
-            this.columnHeader1.Width = 40;
+            this.button1.Location = new System.Drawing.Point(647, 146);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(122, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "RAÍCES PRIMITIVAS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // columnHeader2
+            // label12
             // 
-            this.columnHeader2.Text = "Valor";
-            this.columnHeader2.Width = 200;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(364, 184);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Lista Raices n-ésimas";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(367, 146);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(119, 23);
+            this.button7.TabIndex = 20;
+            this.button7.Text = "RAÍCES N-ÉSIMAS";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // buttonPotencia
+            // 
+            this.buttonPotencia.Location = new System.Drawing.Point(54, 146);
+            this.buttonPotencia.Name = "buttonPotencia";
+            this.buttonPotencia.Size = new System.Drawing.Size(119, 23);
+            this.buttonPotencia.TabIndex = 18;
+            this.buttonPotencia.Text = "POTENCIA";
+            this.buttonPotencia.UseVisualStyleBackColor = true;
+            this.buttonPotencia.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(54, 270);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(278, 20);
+            this.textBox9.TabIndex = 17;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(51, 245);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(125, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Resultado en forma polar";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(54, 211);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(278, 20);
+            this.textBox8.TabIndex = 6;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(51, 184);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(144, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Resultado en forma binomica";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(343, 105);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(278, 20);
+            this.textBox7.TabIndex = 5;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(340, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Factor";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(343, 41);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(278, 20);
+            this.textBox6.TabIndex = 1;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(340, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Número ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(922, 426);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Suma Fasores";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
