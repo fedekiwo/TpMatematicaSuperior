@@ -18,8 +18,15 @@ namespace Tests
         private Fasor f5 = new Fasor(1, "sin", 5, (Math.PI) / 3);
         private Fasor f6 = new Fasor(1, "cos", 3, 0);
         private Fasor f7 = new Fasor(1, "sin", 3, 0);
+        private Fasor f8 = new Fasor(4, "sin", 4, 0);
+        private Fasor f9 = new Fasor(2, "cos", 4, 0);
 
         //-----------------tests Fasores-excepciones-----------------------------------
+        [TestMethod]
+        public void FrecuencyFromf8Plusf9Equals4()
+        {
+            Assert.AreEqual(4, (f8+f9).GetFrequency);
+        }
         [TestMethod]
         public void fasorWithArctgThrowError()
         {

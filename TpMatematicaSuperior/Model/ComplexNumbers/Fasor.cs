@@ -89,7 +89,7 @@ namespace TpMatematicaSuperior.Model.ComplexNumbers
             if (firstFasor.GetFuntionSinusoidal == "sin")
             {
                 firstFasor.FuntionSinusoidal = secondFasor.GetFuntionSinusoidal;
-                firstFasor.Frequency = firstFasor.GetFrequency - (Math.PI / 2);
+                firstFasor.FaseAngle = firstFasor.FaseAngle - (Math.PI / 2);
             }
             else
             {
